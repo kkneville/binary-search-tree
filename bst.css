@@ -1,0 +1,90 @@
+* {
+	border-style: none;
+	border-width: 0px;
+	margin: 0px;
+	padding: 0px;
+}
+
+body {
+	background-color: grey;
+	color: white;
+	border-color: none;
+}
+
+#tree {
+	height: 180px;
+	width: 960px;
+	background-color: grey;
+	border-style: solid;
+	border-radius: 25px;
+}
+
+.row {
+	height: 20px;
+	text-align: center;
+	color: blue;
+}
+
+.leaf {
+	display: inline-block;
+	margin: -2px;
+	padding: 0px;
+	border-width: none;
+
+}
+
+#firstrow {
+	width: 960px;
+	background-color: yellow;
+	margin-left: 0px;
+}
+
+.secondrow {
+	width: 480px;
+}
+
+.thirdrow {
+	width: 240px;
+}
+
+.fourthrow {
+	width: 120px;
+}
+
+.fifthrow {
+	width: 60px;
+}
+
+.sixthrow {
+	width: 30px;
+}
+
+.seventhrow {
+	width: 15px;
+}
+
+.active {
+	border-style: solid;
+	border-color: black;
+}
+
+.left {
+	background-color: yellow;
+}
+
+
+.right {
+	background-color: green;
+}
+
+.highlight {
+	border-color: white;
+	font-size: 14px;
+}
+
+#target {
+	background-color: white;
+	border-color: black;
+	color: black;
+	font-size: 14px;
+}
