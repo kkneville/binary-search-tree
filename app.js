@@ -36,6 +36,20 @@ var server = http.createServer(function (request, response){
             response.end();
         });
     }
+    else if(request.url === '/htree') {
+        fs.readFile('views/htree.html', 'utf8', function (errors, contents){
+            response.writeHead(200, {'Content-Type': 'text/html'});
+            response.write(contents); 
+            response.end();
+        });
+    }
+    else if(request.url === '/htree.js') {
+        fs.readFile('js/htree.js', 'utf8', function (errors, contents){
+            response.writeHead(200, {'Content-Type': 'text/javascript'});
+            response.write(contents); 
+            response.end();
+        });
+    }
     else if(request.url === '/brain') {
         fs.readFile('views/brain.html', 'utf8', function (errors, contents){
             response.writeHead(200, {'Content-Type': 'text/html'});

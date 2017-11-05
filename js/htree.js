@@ -1,30 +1,32 @@
-// $(document).ready(function(){
-// 	$("#seed").hide()
-// });
-
-
+var tree
+var treeData
 
 function generateSeed() {		
   seed = newSeed()
   console.log(seed)
   $("#seed").show()
   document.getElementById("seed").innerHTML = seed
+  treeData = grow(seed)
+  // treeData = treeObj(tree.root)
 }
+
+
 
 var newSeed = function(){
       var b = []
-      for (var i = 0; i < 200; i++){
-        b.push(Math.floor(Math.random()*300))
+      for (var i = 0; i < 10; i++){
+        b.push(Math.floor(Math.random()*100))
       }
       return b
-	}
+}
 
-function Leaf(val, addr, prev=null) {
+function Leaf(val, parent=null) {
   this.value = val;
+  this.name = val;
   this.left = null;
   this.right = null;
-  this.addr = addr;
-  this.prev = prev;
+  this.children = [];
+  this.parent = parent;
 }
 
 function BinarySearchTree() {
@@ -55,7 +57,8 @@ BinarySearchTree.prototype.add = function(val) {
 
     if (val < runner.value) {
       if (!runner.left) {
-        runner.left = new Leaf(val, runner);
+        runner.left = new Leaf(val, runner.name);
+        runner.children.push(runner.left)
         break;
       } 
       else {
@@ -65,7 +68,8 @@ BinarySearchTree.prototype.add = function(val) {
 
     else if (val > runner.value ) {
       if (!runner.right) {
-        runner.right = new Leaf(val, runner);
+        runner.right = new Leaf(val, runner.name);
+        runner.children.push(runner.right)
         break;
       } 
       else {
@@ -79,3 +83,13 @@ BinarySearchTree.prototype.add = function(val) {
 	}
   }
 }
+
+// function treeObj(root, obj={"name": null, "children":[]}){
+// 	if (obj.name === null) {
+// 		obj.name = root.name
+// 		obj.children = root.children
+// 	}
+// 	console.log(obj);
+// 	return obj;
+// }
+

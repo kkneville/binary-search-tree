@@ -1,16 +1,14 @@
 var tree
-var treeData
+var treeData 
 
 function generateSeed() {		
   seed = newSeed()
   console.log(seed)
   $("#seed").show()
   document.getElementById("seed").innerHTML = seed
-  treeData = grow(seed)
+  tree = grow(seed)
   // treeData = treeObj(tree.root)
 }
-
-
 
 var newSeed = function(){
       var b = []
@@ -84,11 +82,18 @@ BinarySearchTree.prototype.add = function(val) {
   }
 }
 
-// function treeObj(root, obj={"name": null, "children":[]}){
+// function treeObj(root, node=root obj={"name": null, "children":[]}){
 // 	if (obj.name === null) {
 // 		obj.name = root.name
 // 		obj.children = root.children
 // 	}
+//   if (obj.children.length > 0) {
+//     for (var i = 0; i < object.children.length; i++){
+      
+//     }
+
+//   }
+
 // 	console.log(obj);
 // 	return obj;
 // }
