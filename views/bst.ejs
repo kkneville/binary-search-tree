@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Binary Search Trees</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="/js/bst.js"></script>
+  <link rel="stylesheet" type="text/css" href="/css/bst.css">
+</head>
+<body>
+
+<div class="header">
+  <h2>Binary Search Trees</h2>
+</div>
+
+<div class="input">
+  <p> WIP -- Enter a comma-separated list of data to sort into your tree: </p>
+  <p><input type="text" id="input"></p>
+  <p><button type="submit" id="submit">Enter</button></p>
+</div>
+
+<div class="options">
+  <p> Generate a seed to grow a binary search tree: </p>
+  <p> <button id="generate" onclick="generateSeed()">Generate New</button> </p>
+  <p>New Seed: <span id="seed"></span></p>
+</div>
+
+<div id="tree">
+  <div class="row leaf" id="firstrow">.</div>
+   
+  <div class="row">
+    <div class="leaf secondrow left">.</div> 
+    <div class="leaf secondrow right">.</div> 
+  </div>  
+
+  <div class="row">
+    <div class="leaf thirdrow left">.</div> 
+    <div class="leaf thirdrow right">.</div> 
+    <div class="leaf thirdrow left">.</div> 
+    <div class="leaf thirdrow right">.</div>
+  </div>
+
+  <div class="row">
+    <div class="leaf fourthrow left">.</div> 
+    <div class="leaf fourthrow right">.</div> 
+    <div class="leaf fourthrow left">.</div> 
+    <div class="leaf fourthrow right">.</div>
+    <div class="leaf fourthrow left">.</div> 
+    <div class="leaf fourthrow right">.</div> 
+    <div class="leaf fourthrow left">.</div> 
+    <div class="leaf fourthrow right">.</div>
+  </div>
+
+  <div class="row">
+    <div class="leaf fifthrow left">.</div> 
+    <div class="leaf fifthrow right">.</div> 
+    <div class="leaf fifthrow left">.</div> 
+    <div class="leaf fifthrow right">.</div>
+    <div class="leaf fifthrow left">.</div>
+    <div class="leaf fifthrow right">.</div> 
+    <div class="leaf fifthrow left">.</div> 
+    <div class="leaf fifthrow right">.</div>
+    <div class="leaf fifthrow left">.</div> 
+    <div class="leaf fifthrow right">.</div> 
+    <div class="leaf fifthrow left">.</div> 
+    <div class="leaf fifthrow right">.</div>
+    <div class="leaf fifthrow left">.</div> 
+    <div class="leaf fifthrow right">.</div> 
+    <div class="leaf fifthrow left">.</div> 
+    <div class="leaf fifthrow right">.</div>
+  </div>
+
+  <div class="row">
+    <div class="leaf sixthrow left">.</div> 
+    <div class="leaf sixthrow right">.</div> 
+    <div class="leaf sixthrow left">.</div> 
+    <div class="leaf sixthrow right">.</div>
+    <div class="leaf sixthrow left">.</div>
+    <div class="leaf sixthrow right">.</div> 
+    <div class="leaf sixthrow left">.</div> 
+    <div class="leaf sixthrow right">.</div>
+    <div class="leaf sixthrow left">.</div> 
+    <div class="leaf sixthrow right">.</div> 
+    <div class="leaf sixthrow left">.</div> 
+    <div class="leaf sixthrow right">.</div>
+    <div class="leaf sixthrow left">.</div> 
+    <div class="leaf sixthrow right">.</div> 
+    <div class="leaf sixthrow left">.</div> 
+    <div class="leaf sixthrow right">.</div> 
+    <div class="leaf sixthrow left">.</div> 
+    <div class="leaf sixthrow right">.</div> 
+    <div class="leaf sixthrow left">.</div> 
+    <div class="leaf sixthrow right">.</div>
+    <div class="leaf sixthrow left">.</div>
+    <div class="leaf sixthrow right">.</div> 
+    <div class="leaf sixthrow left">.</div> 
+    <div class="leaf sixthrow right">.</div>
+    <div class="leaf sixthrow left">.</div> 
+    <div class="leaf sixthrow right">.</div> 
+    <div class="leaf sixthrow left">.</div> 
+    <div class="leaf sixthrow right">.</div>
+    <div class="leaf sixthrow left">.</div> 
+    <div class="leaf sixthrow right">.</div> 
+    <div class="leaf sixthrow left">.</div> 
+    <div class="leaf sixthrow right">.</div> 
+  </div>
+
+  <div class="row">
+    <div class="leaf seventhrow left">.</div> 
+    <div class="leaf seventhrow right">.</div> 
+    <div class="leaf seventhrow left">.</div> 
+    <div class="leaf seventhrow right">.</div>
+    <div class="leaf seventhrow left">.</div>
+    <div class="leaf seventhrow right">.</div> 
+    <div class="leaf seventhrow left">.</div> 
+    <div class="leaf seventhrow right">.</div>
+    <div class="leaf seventhrow left">.</div> 
+    <div class="leaf seventhrow right">.</div> 
+    <div class="leaf seventhrow left">.</div> 
+    <div class="leaf seventhrow right">.</div>
+    <div class="leaf seventhrow left">.</div> 
+    <div class="leaf seventhrow right">.</div> 
+    <div class="leaf seventhrow left">.</div> 
+    <div class="leaf seventhrow right">.</div> 
+    <div class="leaf seventhrow left">.</div> 
+    <div class="leaf seventhrow right">.</div> 
+    <div class="leaf seventhrow left">.</div> 
+    <div class="leaf seventhrow right">.</div>
+    <div class="leaf seventhrow left">.</div>
+    <div class="leaf seventhrow right">.</div> 
+    <div class="leaf seventhrow left">.</div> 
+    <div class="leaf seventhrow right">.</div>
+    <div class="leaf seventhrow left">.</div> 
+    <div class="leaf seventhrow right">.</div> 
+    <div class="leaf seventhrow left">.</div> 
+    <div class="leaf seventhrow right">.</div>
+    <div class="leaf seventhrow left">.</div> 
+    <div class="leaf seventhrow right">.</div> 
+    <div class="leaf seventhrow left">.</div> 
+    <div class="leaf seventhrow right">.</div> 
+    <div class="leaf seventhrow left">.</div> 
+    <div class="leaf seventhrow right">.</div> 
+    <div class="leaf seventhrow left">.</div> 
+    <div class="leaf seventhrow right">.</div>
+    <div class="leaf seventhrow left">.</div>
+    <div class="leaf seventhrow right">.</div> 
+    <div class="leaf seventhrow left">.</div> 
+    <div class="leaf seventhrow right">.</div>
+    <div class="leaf seventhrow left">.</div> 
+    <div class="leaf seventhrow right">.</div> 
+    <div class="leaf seventhrow left">.</div> 
+    <div class="leaf seventhrow right">.</div>
+    <div class="leaf seventhrow left">.</div> 
+    <div class="leaf seventhrow right">.</div> 
+    <div class="leaf seventhrow left">.</div> 
+    <div class="leaf seventhrow right">.</div> 
+    <div class="leaf seventhrow left">.</div> 
+    <div class="leaf seventhrow right">.</div> 
+    <div class="leaf seventhrow left">.</div> 
+    <div class="leaf seventhrow right">.</div>
+    <div class="leaf seventhrow left">.</div>
+    <div class="leaf seventhrow right">.</div> 
+    <div class="leaf seventhrow left">.</div> 
+    <div class="leaf seventhrow right">.</div>
+    <div class="leaf seventhrow left">.</div> 
+    <div class="leaf seventhrow right">.</div> 
+    <div class="leaf seventhrow left">.</div> 
+    <div class="leaf seventhrow right">.</div>
+    <div class="leaf seventhrow left">.</div> 
+    <div class="leaf seventhrow right">.</div> 
+    <div class="leaf seventhrow left">.</div> 
+    <div class="leaf seventhrow right">.</div>
+  </div>
+</div>  
+
+<p>Convert to Sorted Array: <button onclick="toArray()">Go</button> <span class="stats" id="toArray"></span> </p>
+<p>Max, Min, Ave: <button onclick="">Go</button> <span class="stats" id="maxminavg"></span> </p>
+<p>Height: <button onclick="">Go</button> <span class="stats" id="height"></span> </p>
+<p>Other: <button onclick="">Go</button> <span class="stats" id=""></span> </p>
+<p>Other: <button onclick="">Go</button> <span class="stats" id=""></span> </p>
+
+</body>
+</html>

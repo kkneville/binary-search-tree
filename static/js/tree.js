@@ -89,7 +89,7 @@ BinarySearchTree.prototype.add = function(val) {
 // 	}
 //   if (obj.children.length > 0) {
 //     for (var i = 0; i < object.children.length; i++){
-      
+
 //     }
 
 //   }
